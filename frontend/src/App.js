@@ -39,6 +39,8 @@ function App() {
   }, [])
 
   const deleteNote = (entry) => {
+    setLoading(true);
+
     const deleteFromDB = async (note_to_delete) => {
       try {
         await fetch("http://localhost:4000/deleteNote/" + note_to_delete._id,
@@ -61,6 +63,8 @@ function App() {
   }
 
   const deleteAllNotes = () => {
+    setLoading(true);
+
     const deleteAllFromDB = async () => {
       try {
         await fetch("http://localhost:4000/deleteAllNotes",
