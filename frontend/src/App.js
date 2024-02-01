@@ -48,12 +48,14 @@ function App() {
         .then(async (response) => {
           if (!response.ok) {
             console.log("Served failed:", response.status);
+            alert("Served failed.");
           } else {
             deleteNoteState(entry);
           }
         })
       } catch (error) {
         console.log("Fetch function failed:", error)
+        alert("Server request error.");
       } finally {
         setLoading(false)
       }
@@ -78,6 +80,7 @@ function App() {
         })
       } catch (error) {
         console.log("Fetch function failed:", error)
+        alert("Server request error.");
       } finally {
         setLoading(false)
       }
